@@ -1,0 +1,31 @@
+Recently viewed
+xpath //*[@id="box-recently-viewed-products"]/div/div[2]
+css #box-recently-viewed-products > div > div:nth-child(2)
+
+Sign in
+xpath //li[@class='account dropdown']
+css li.account.dropdown
+
+Manufacturers
+xpath //li[@class='manufacturers dropdown']
+css li.manufacturers.dropdown
+
+Popular products -> Green Duck
+xpath //*[@id="box-popular-products"]//img[@alt='Green Duck']
+css #box-popular-products img[alt='Green Duck']
+
+Latest Products -> Red Duck
+xpath //*[@id="box-latest-products"]//img[@alt='Red Duck']
+css #box-latest-products img[alt='Red Duck']
+
+Sign in -> Email
+xpath //*[@id="default-menu"]//input[@type='email']
+css #default-menu input[type='email']
+
+Sign in -> Password
+xpath //*[@id="default-menu"]//input[@type='password']
+css #default-menu input[type='password']
+
+New customers click here
+xpath //*[@id="default-menu"]//a[text() = 'New customers click here']
+css #default-menu a[href*='create_account']
