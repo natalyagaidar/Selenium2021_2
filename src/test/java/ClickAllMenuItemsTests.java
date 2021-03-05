@@ -23,6 +23,7 @@ public class ClickAllMenuItemsTests {
     @BeforeTest
     void setup() {
         driver = new ChromeDriver();
+        wait = new WebDriverWait(driver,10);
         driver.get(pageUrl.concat("admin/login.php"));
         login();
     }
@@ -36,15 +37,16 @@ public class ClickAllMenuItemsTests {
     public void ClickAllMenuItemsTest(){
         By menuItemLocator = By.className("app");
         By subMenuItemLocator = By.className("doc");
+        By subMenuItemXpathLocator = By.xpath("//li[contains(@class,'doc')]");
         By heading = By.className("panel-heading");
-        wait = new WebDriverWait(driver,10);
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("box-apps-menu")));
+        By leftMenu = By.id("box-apps-menu");
+        wait.until(ExpectedConditions.visibilityOfElementLocated(leftMenu));
         for(int i=0; i< driver.findElements(menuItemLocator).size(); i++){
             driver.findElements(menuItemLocator).get(i).click();
             Assert.assertTrue(isElementPresent(heading), "Heading not present");
             driver.manage().timeouts().implicitlyWait(1000, TimeUnit.MILLISECONDS);
             for(int j = 0; j< driver.findElements(subMenuItemLocator).size(); j++){
-                driver.findElements(By.xpath("//li[contains(@class,'doc')]")).get(j).click();
+                driver.findElements(subMenuItemXpathLocator).get(j).click();
                 Assert.assertTrue(isElementPresent(heading), "Heading not present");
             }
         }
