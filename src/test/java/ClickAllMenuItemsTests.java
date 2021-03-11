@@ -1,8 +1,6 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
@@ -16,8 +14,6 @@ public class ClickAllMenuItemsTests extends BaseTest{
 
     @BeforeTest
     void setup() {
-        driver = new ChromeDriver();
-        wait = new WebDriverWait(driver,10);
         driver.get(pageUrl.concat("admin/login.php"));
         login();
     }

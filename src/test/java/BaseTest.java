@@ -12,11 +12,8 @@ public class BaseTest {
     By logout = By.cssSelector("#top-bar a[title='Logout']");
     String pageUrl = "http://158.101.173.161/";
 
-
     @AfterTest
     void after() {
         driver.quit();
     }
-
-
 }
