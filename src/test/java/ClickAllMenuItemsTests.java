@@ -1,5 +1,4 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,14 +10,9 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class ClickAllMenuItemsTests {
+public class ClickAllMenuItemsTests extends BaseTest{
 
-    WebDriver driver;
-    WebDriverWait wait;
-    String username = "testadmin";
-    String password = "R8MRDAYT_test";
     By logout = By.cssSelector("#top-bar a[title='Logout']");
-    String pageUrl = "http://158.101.173.161/";
 
     @BeforeTest
     void setup() {
