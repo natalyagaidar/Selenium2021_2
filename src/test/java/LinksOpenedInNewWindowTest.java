@@ -5,6 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -53,6 +54,7 @@ public class LinksOpenedInNewWindowTest {
             link.click();
             String newHandle = eventListener.getWindowHandles().stream().filter(h -> !h.equals(mainHandle)).findFirst().get();
             eventListener.switchTo().window(newHandle);
+            Assert.assertTrue(eventListener.getTitle().contains("Wikipedia"));
             eventListener.close();
             eventListener.switchTo().window(mainHandle);
         });
