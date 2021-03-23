@@ -21,9 +21,8 @@ public class AddToCartTest extends CommonTest {
         Assert.assertEquals(app.getCartProductsQuantity(), 0, "The cart is not empty after attempt ot remove all items");
     }
 
-    public HomePage addProductAndGoHome() {
+    public void addProductAndGoHome() {
         app.openHomePage().pickRandomDuckInPopularProducts();
         app.addProductAndGoHome();
-        return app.goToHomePageFromDuckPage();
     }
 }
